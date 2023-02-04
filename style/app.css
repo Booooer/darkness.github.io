@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+*{
+    box-sizing: border-box;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    font-family: 'Pacifico', cursive;
+}
+/* 
+
+*/
+.modal-info{
+    position: absolute;
+    padding: 15px 5px;
+    top: -100%;
+    width: 40vw;
+    height: 100px;
+    background: #fff;
+    transition: .5s ease-in;
+    font-size: 21px;
+    text-align: center;
+}
+/*
+
+ */
+
+.game-field{
+    width: 100%;
+    height: 70vh;
+    padding: 0 20vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-image: url("../img/bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: fill;
+}
+.game-field img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.card-enemy, .card-player{
+    text-shadow: 1px 1px #000;
+    transition: .5s ease-in;
+    width: 20vw;
+    height: 55vh;
+    position: relative;
+    font-size: 60px;
+}
+.heal{
+    animation: heal 1.5s ease-in-out;
+}
+.buff{
+    animation: buff 1.5s ease-in-out;
+}
+.ultimate{
+    animation: ultimate 2s ease-in-out;
+}
+.game-panel{
+    display: flex;
+}
+.game-action{
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;    
+    width: 60%;
+    height: 30vh;
+    background: #222222;
+}
+.actions{
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    bottom: 100%;
+    position: absolute;
+    z-index: 10;
+    transition: .4s ease-in-out;
+    width: 100%;
+    height: 100%;
+}
+.actions button{
+    cursor: pointer;
+    width: 60%;
+    height: 60px;
+}
+.game-info{
+    padding: 15px;
+    width: 40%;
+    height: 30vh;
+    background: #56ceec;
+}
+.cards{
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+.cards img{
+    position: inherit;
+    width: 100%;
+    height: 100%;
+}
+.card{
+    text-shadow: 1px 1px #000;
+    cursor: pointer;
+    max-width: 160px;
+    height: 250px;
+    position: relative;
+    overflow: hidden;
+    font-size: 36px;
+}
+.get-damage{
+    animation: damage .6s ease-in;
+}
+.player-attack{
+    animation: playerAttack .9s ease-in-out;
+}
+/* 
+    Animations
+*/
+@keyframes damage {
+    from{
+        transform: rotate(0);
+    }
+    33%{
+        transform: rotate(30deg);
+    }
+    66%{
+        transform: rotate(-30deg);
+    }
+    to{
+        transform: rotate(0);
+    }
+}
+@keyframes playerAttack {
+    from{
+        transform: translateX(0);
+    }
+    25%{
+        transform: scale(1.25);
+    }
+    50%{
+        transform: scale(1.25);
+        transform: translateX(300px);
+    }
+    to{
+        transform: scale(1);
+        transform: translateX(0);
+    }
+}
+@keyframes heal {
+    from{
+        border: none;
+    }
+    50%{
+        border-radius: 5px;
+        -webkit-box-shadow: -1px 9px 74px 48px rgba(41, 210, 39, 0.68);
+        -moz-box-shadow: -1px 9px 74px 48px rgba(41, 210, 39, 0.68);
+        box-shadow: -1px 9px 74px 48px rgba(41, 210, 39, 0.68);
+    }
+    to{
+        border: none;
+        box-shadow: none;
+    }
+}
+@keyframes buff {
+    from{
+        border: none;
+    }
+    50%{
+        border-radius: 5px;
+        -webkit-box-shadow: -1px 9px 74px 48px rgba(255, 185, 47, 0.68);
+        -moz-box-shadow: -1px 9px 74px 48px rgba(255, 185, 47, 0.68);
+        box-shadow: -1px 9px 74px 48px rgba(255, 185, 47, 0.68);
+    }
+    to{
+        border: none;
+        box-shadow: none;
+    }
+}
+@keyframes ultimate {
+    from{
+        border: none;
+    }
+    50%{
+        border-radius: 5px;
+        -webkit-box-shadow: -1px 18px 67px 100px rgba(255, 56, 47, 0.68);
+        -moz-box-shadow: -1px 18px 67px 100px rgba(255, 56, 47, 0.68);
+        box-shadow: -1px 18px 67px 100px rgba(255, 56, 47, 0.68);
+    }
+    to{
+        border: none;
+        box-shadow: none;
+    }
+}
+/* 
+    end of animations
+*/
+.card-attack{
+    bottom: 0;
+    left: 8%;
+    color: #fff;
+    position: absolute;
+    box-shadow: 10px 10px solid black;
+}
+.card-health{
+    bottom: 0;
+    right: 7%;
+    color: #fff;
+    position: absolute;
+    box-shadow: 10px 10px solid black;
+}
