@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/app.css">
+    <title>The Darkness</title>
+</head>
+<body>
+    <div class="modal-info">
+
+    </div>
+    <div class="game-field">
+        <div class="card-player">
+
+        </div>
+        <div class="card-enemy">
+            
+        </div>
+    </div>
+    <div class="game-panel">
+        <div class="game-action">
+            <div class="cards">
+                <div class="card">
+                    <input class="card-name" type="hidden" value="Лада Гранта">
+                    <input class="card-info" type="hidden" value="Лада уничтожает карту противника, но
+                    после её здоровье станет равно 1">
+                    <img src="img/cards/Lada_card.png" alt="">
+                    <p class="card-attack">2</p>
+                    <p class="card-health">6</p>
+                </div>
+                <div class="card">
+                    <input class="card-name" type="hidden" value="Лесник">
+                    <input class="card-info" type="hidden" value="Лесник повышет свою атаку на 
+                    показатель здоровья своего врага">
+                    <img src="img/cards/Lesnik_card.png" alt="">
+                    <p class="card-attack">3</p>
+                    <p class="card-health">5</p>
+                </div>
+                <div class="card">
+                    <input class="card-name" type="hidden" value="Милф Слэйер">
+                    <input class="card-info" type="hidden" value="Милф Слэйер наносит двойной урон цели">
+                    <img src="img/cards/MilfSlayer_card.png" alt="">
+                    <p class="card-attack">4</p>
+                    <p class="card-health">4</p>
+                </div>
+            </div>
+            <div class="actions">
+                <button id="btn-attack" onclick="Attack()">Прямая атака</button>
+                <button id="btn-buff" onclick="buffATK()">Увеличить показатель атаки</button>
+                <button id="btn-heal" onclick="Heal()">Исцеление</button>
+                <button id="btn-ultimate" onclick="Ultimate()" disabled>Ультимейт</button>
+            </div>
+        </div>
+        <div class="game-info">
+
+        </div>
+    </div>
+<script type="text/javascript" src="js/cards.js"></script>    
+<script type="text/javascript" src="js/app.js"></script>
+</body>
+</html>
